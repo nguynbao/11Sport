@@ -1,0 +1,17 @@
+storage/
+backend/.env
+backend/.venv/
+backend/data/
+backend/assets/models/
+backend/assets/voices/bao*.wav
+backend/assets/voices/demo_bao*.wav
+*.pth
+*.pt
+*.index
+frontend/node_modules/
+frontend/dist/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.DS_Store

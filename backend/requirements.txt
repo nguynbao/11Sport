@@ -1,0 +1,31 @@
+# Core web & database
+fastapi>=0.115
+uvicorn[standard]>=0.30
+python-multipart>=0.0.9
+sqlalchemy>=2.0
+pydantic>=2.7
+pydantic-settings>=2.3
+
+# AI & cloud providers (real + free demo modes)
+openai>=1.40
+httpx>=0.27
+tenacity>=8.3
+faster-whisper>=1.2.1
+edge-tts>=7.3.1
+# Pin <1.20 on Intel macOS (x86_64) where newer onnxruntime wheels are not published
+onnxruntime<1.20; sys_platform == "darwin" and platform_machine == "x86_64"
+onnxruntime>=1.19; sys_platform != "darwin" or platform_machine != "x86_64"
+
+# Audio, RVC voice conversion & subtitle processing
+numpy>=1.26,<2.0
+scipy>=1.12,<1.14
+torch==2.2.2; sys_platform == "darwin" and platform_machine == "x86_64"
+torch>=2.2.2; sys_platform != "darwin" or platform_machine != "x86_64"
+transformers==4.46.3
+praat-parselmouth>=0.4.4
+soundfile>=0.12
+pysubs2>=1.7
+
+# Testing & linting
+pytest>=8.0
+ruff>=0.5

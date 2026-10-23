@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Backend: API Server (:8000)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["app.main:app", "--reload", "--port", "8000"],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/bin/python",
+      "env": {
+        "PATH": "${env:HOME}/.local/bin:${env:PATH}"
+      }
+    },
+    {
+      "name": "Backend: Worker",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "app.worker",
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/bin/python",
+      "env": {
+        "PATH": "${env:HOME}/.local/bin:${env:PATH}"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Backend: API + Worker",
+      "configurations": ["Backend: API Server (:8000)", "Backend: Worker"]
+    }
+  ]
+}
